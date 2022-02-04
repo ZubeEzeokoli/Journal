@@ -1,12 +1,3 @@
-# a2.py
-
-# Starter code for assignment 2 in ICS 32 Programming with Software Libraries in Python
-
-# Replace the following placeholders with your information.
-
-# Nzubechi Ezeokoli
-# nezeokol@uci.edu
-# 56611321
 import ui
 from Profile import Profile
 from Profile import Post
