@@ -1,9 +1,19 @@
+# a2.py
+
+# Starter code for assignment 2 in ICS 32 Programming with Software Libraries in Python
+
+# Replace the following placeholders with your information.
+
+# Nzubechi Ezeokoli
+# nezeokol@uci.edu
+# 56611321
 import ui
 from Profile import Profile
 from Profile import Post
 from pathlib import Path
-inp = input('Hello! Would you like to create or open a file today (press C for create or O for open)? You may also enter \"admin\" to enter ADMIN mode or enter \'Q\' to quit\n')
-if inp.lower() != 'admin':
+
+
+def run_user_interface(inp):
     while inp.upper() != 'Q':
         try:
             #try and except to make sure my code doesn't crash at any point, but can quit if given command q
@@ -69,7 +79,10 @@ if inp.lower() != 'admin':
             print('Something went wrong, if you didn\'t already load or create a file please enter C or O to continue. Else, enter a valid command and follow the instructions')
             print('C-create a new file\nO-opens a file and loads its contents\nE-edit the contents of a file\nP-print the contents of a file\nQ-quit\n')
             inp = input()
-else:
+            run_user_interface(inp)
+
+
+def run_admin_mode(inp):
     print('ADMIN MODE ENTERED')
     #Enters admin mode so this gets rid of all input messages and user must enter inputs according to the assignment
     print('Please create or open a file')
@@ -169,3 +182,11 @@ else:
         except:
             print("ERROR")
             inp = input()
+            run_admin_mode(inp)
+
+if __name__ == "__main__":
+    inp = input('Hello! Would you like to create or open a file today (press C for create or O for open)? You may also enter \"admin\" to enter ADMIN mode or enter \'Q\' to quit\n')
+    if inp.lower() != 'admin':
+        run_user_interface(inp)
+    else:
+        run_admin_mode(inp)
